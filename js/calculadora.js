@@ -11,8 +11,30 @@ function notaFinal4(nota1, nota2, nota3, nota4){
     resultado = suma / 4;
 }
 
+function persona(name, dni, grade){
+    this.name = name;
+    this.dni = dni;
+    this.grade = grade;
+}
+
+const yo = ["Santiago Woscoff", 18];
+alert("Hola! Yo soy " + yo[0] + ", un alumno de " + yo[1] + " años que espera que esta aplicación te sirva!");
+
+
+const profe = prompt('Ingrese su nombre profe');
+const dniProf = Number(prompt('Ingrese su documento por favor'));
+const grado = prompt('Ingrese el curso al que quiere promediar');
+const profesor = new persona(profe, dniProf, grado);
+console.log(profesor);
+alert('Bienvenido ' + profesor.name + ", que tenga un buen dia promediando a " + profesor.grade);
+
+
 do {
-    let nombre = prompt('Ingresar el nombre del alumno');
+    const alum = prompt('Ingrese el nombre del alumno');
+    const dniAlum = Number(prompt('Ingrese el documento del alumno'));
+    const curso = prompt('Ingrese el curso del alumno');
+    const alumno = new persona(alum, dniAlum, curso);
+
     let menu = Number(prompt('1.Promediar tres notas / 2.Promediar cuatro notas'));
 switch (menu) {
     case 1:
@@ -20,13 +42,14 @@ switch (menu) {
         let n2 = Number(prompt('Ingresar la segunda nota del alumno'));
         let n3 = Number(prompt('Ingresar la tercer nota del alumno'));
         notaFinal3(n1, n2, n3);
+        if (resultado >= 6.5) {
+            alert('Wow! ' + alumno.name + ' aprobó con un promedio de ' + resultado + ' porque redondeamos la nota!');
+        }
         if (resultado >= 7) {
-            alert("Felicidades! " + nombre + ' aprobó con un promedio de ' + resultado + '!!!');
-        } if (resultado >= 6.5) {
-            alert('Wow! ' + nombre + ' aprobó con un promedio de ' + resultado + ' porque redondeamos la nota!');
+            alert("Felicidades! " + alumno.name + ' aprobó con un promedio de ' + resultado + '!!!');
         } 
-        else {
-            alert("Ups! Parece que " + nombre + ' desaprobó con un promedio de ' + resultado + '. Deberá recuperar.');
+        if(resultado < 6.5){
+            alert("Ups! Parece que " + alumno.name + ' desaprobó con un promedio de ' + resultado + '. Deberá recuperar.');
         }
         break;
     case 2:
@@ -35,13 +58,14 @@ switch (menu) {
         let num3 = Number(prompt('Ingresar la tercer nota del alumno'));
         let num4 = Number(prompt('Ingresar la cuarta nota del alumno'));
         notaFinal4(num1, num2, num3, num4);
+        if (resultado >= 6.5) {
+            alert('Wow! ' + alumno.name + ' aprobó con un promedio de ' + resultado + ' porque redondeamos la nota!');
+        }
         if (resultado >= 7) {
-            alert("Felicidades! " + nombre + ' aprobó con un promedio de ' + resultado + '!!!');
-        } if (resultado >= 6.5) {
-            alert('Wow! ' + nombre + ' aprobó con un promedio de ' + resultado + ' porque redondeamos la nota!');
+            alert("Felicidades! " + alumno.name + ' aprobó con un promedio de ' + resultado + '!!!');
         } 
-        else {
-            alert("Ups! Parece que " + nombre + ' desaprobó con un promedio de ' + resultado + '. Deberá recuperar.');
+        if(resultado < 6.5){
+            alert("Ups! Parece que " + alumno.name + ' desaprobó con un promedio de ' + resultado + '. Deberá recuperar.');
         }
         break;
     default:
