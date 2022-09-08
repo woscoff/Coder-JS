@@ -18,7 +18,7 @@ function persona(name, dni, grade){
 }
 
 const yo = ["Santiago Woscoff", 18];
-alert("Hola! Yo soy " + yo[0] + ", un alumno de " + yo[1] + " años que espera que esta aplicación te sirva!");
+alert("Hola! Yo soy " + yo[0] + ", un estudiante de " + yo[1] + " años que espera que esta aplicación te sirva!");
 
 
 const profe = prompt('Ingrese su nombre profe');
