@@ -18,18 +18,25 @@ function persona(name, dni, grade){
 }
 
 const yo = ["Santiago Woscoff", 18];
-alert("Hola! Yo soy " + yo[0] + ", un estudiante de " + yo[1] + " años que espera que esta aplicación te sirva!");
+
+function mostrarPresentacion(yo){
+    const presentacion = document.getElementById("presentacion");
+    presentacion.innerHTML = "Hola! Yo soy " + yo[0] + ", un estudiante de " + yo[1] + " años que espera que esta aplicación te sirva!";
+}
+mostrarPresentacion(yo);
 
 
-const profe = prompt('Ingrese su nombre profe');
+/* const profe = prompt('Ingrese su nombre profe');
 const dniProf = Number(prompt('Ingrese su documento por favor'));
 const grado = prompt('Ingrese el curso al que quiere promediar');
-const profesor = new persona(profe, dniProf, grado);
-console.log(profesor);
-alert('Bienvenido ' + profesor.name + ", que tenga un buen dia promediando a " + profesor.grade);
+const profesor = new persona(profe, dniProf, grado); */
 
 
-do {
+
+/* alert('Bienvenido ' + profesor.name + ", que tenga un buen dia promediando a " + profesor.grade); */
+
+
+/* do {
     const alum = prompt('Ingrese el nombre del alumno');
     const dniAlum = Number(prompt('Ingrese el documento del alumno'));
     const curso = prompt('Ingrese el curso del alumno');
@@ -74,8 +81,7 @@ switch (menu) {
 }
 pregunta = Number(prompt('1.Seguir haciendo promedios / 2.Mucho por hoy🤯'));
 } while(pregunta == 1);
-
-
+ */
 
 
 
