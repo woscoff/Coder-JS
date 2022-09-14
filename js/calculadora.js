@@ -25,6 +25,21 @@ function mostrarPresentacion(yo){
 }
 mostrarPresentacion(yo);
 
+function saludoProfe(persona){
+    alert('Bienvenido ' + nombreProfe + ", que tenga un buen dia promediando a " + cursoProfe);
+}
+
+function profe(persona){
+    const nombreProfe = document.getElementById("nombreProfe");
+    const dniProfe = document.getElementById("dniProfe");
+    const cursoProfe = document.getElementById("cursoProfe");
+    const boton = document.getElementById("boton");
+    boton.addEventListener("click", () => {
+        saludoProfe(persona);
+    }
+)
+    // despues de tocar boton
+}
 
 /* const profe = prompt('Ingrese su nombre profe');
 const dniProf = Number(prompt('Ingrese su documento por favor'));
