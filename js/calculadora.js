@@ -33,13 +33,14 @@ function profe(persona){
     const nombreProfe = document.getElementById("nombreProfe");
     const dniProfe = document.getElementById("dniProfe");
     const cursoProfe = document.getElementById("cursoProfe");
-    const boton = document.getElementById("boton");
+    
+}
+
+const boton = document.getElementById("boton");
     boton.addEventListener("click", () => {
-        saludoProfe(persona);
+        alert("Bienvenido!");
     }
 )
-    // despues de tocar boton
-}
 
 /* const profe = prompt('Ingrese su nombre profe');
 const dniProf = Number(prompt('Ingrese su documento por favor'));
