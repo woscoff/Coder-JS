@@ -25,14 +25,14 @@ function mostrarPresentacion(yo){
 }
 mostrarPresentacion(yo);
 
+const nombreProfe = document.getElementById("nombreProfe");
+const dniProfe = document.getElementById("dniProfe");    
+const cursoProfe = document.getElementById("cursoProfe");
+
 function saludoProfe(persona){
     alert('Bienvenido ' + nombreProfe + ", que tenga un buen dia promediando a " + cursoProfe);
 }
 
-    const nombreProfe = document.getElementById("nombreProfe");
-    const dniProfe = document.getElementById("dniProfe");
-    const cursoProfe = document.getElementById("cursoProfe");
-    
 
 const boton = document.getElementById("boton");
     boton.addEventListener("click", () => {
