@@ -29,16 +29,14 @@ function saludoProfe(persona){
     alert('Bienvenido ' + nombreProfe + ", que tenga un buen dia promediando a " + cursoProfe);
 }
 
-function profe(persona){
     const nombreProfe = document.getElementById("nombreProfe");
     const dniProfe = document.getElementById("dniProfe");
     const cursoProfe = document.getElementById("cursoProfe");
     
-}
 
 const boton = document.getElementById("boton");
     boton.addEventListener("click", () => {
-        alert("Bienvenido!");
+        alert("Bienvenido "+ nombreProfe + " que tenga un buen dia");
     }
 )
 
