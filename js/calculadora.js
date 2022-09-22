@@ -23,22 +23,29 @@ function mostrarPresentacion(yo){
     const presentacion = document.getElementById("presentacion");
     presentacion.innerHTML = "Hola! Yo soy " + yo[0] + ", un estudiante de " + yo[1] + " años que espera que esta aplicación te sirva!";
 }
-mostrarPresentacion(yo);
+mostrarPresentacion(yo); 
 
 const nombreProfe = document.getElementById("nombreProfe");
 const dniProfe = document.getElementById("dniProfe");    
 const cursoProfe = document.getElementById("cursoProfe");
 
-function saludoProfe(persona){
-    alert('Bienvenido ' + nombreProfe + ", que tenga un buen dia promediando a " + cursoProfe);
-}
-
 
 const boton = document.getElementById("boton");
     boton.addEventListener("click", () => {
-        alert("Bienvenido "+ nombreProfe + " que tenga un buen dia");
+        alert("Bienvenido "+ nombreProfe.value + " que tenga un buen dia promediando a " + cursoProfe.value); 
     }
 )
+
+localStorage.setItem("profesor", nombreProfe.value);
+localStorage.setItem("dniProfesor", dniProfe.value);
+/* let teacher = localStorage.getItem("profesor");
+let dniTeacher = localStorage.getItem("dniProfesor");
+
+const profe = document.getElementById("profe");
+profe.innerHTML = "Hola " + teacher; */
+
+
+
 
 /* const profe = prompt('Ingrese su nombre profe');
 const dniProf = Number(prompt('Ingrese su documento por favor'));
