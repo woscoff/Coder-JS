@@ -17,62 +17,51 @@ function persona(name, dni, grade){
     this.grade = grade;
 }
 
+
+
+
+
+function guardarInfoProfe(){
+    nombreProfe.addEventListener("focusout", function() {
+        localStorage.setItem("profesor", nombreProfe.value);
+        })
+    dniProfe.addEventListener("focusout", function() {
+    localStorage.setItem("documentoProfe", dniProfe.value);
+        })
+    cursoProfe.addEventListener("focusout", function() {
+        localStorage.setItem("cursoProfe", cursoProfe.value);
+        })
+}
+
 const yo = ["Santiago Woscoff", 18];
 
 function mostrarPresentacion(yo){
     const presentacion = document.getElementById("presentacion");
     presentacion.innerHTML = "Hola! Yo soy " + yo[0] + ", un estudiante de " + yo[1] + " años que espera que esta aplicación te sirva!";
 }
-mostrarPresentacion(yo); 
-
-const nombreProfe = document.getElementById("nombreProfe");
-const dniProfe = document.getElementById("dniProfe");    
-const cursoProfe = document.getElementById("cursoProfe");
 
 
-const boton = document.getElementById("boton");
-    boton.addEventListener("click", () => {
-        alert("Bienvenido "+ nombreProfe.value + " que tenga un buen dia promediando a " + cursoProfe.value); 
-    }
-)
-
-nombreProfe.addEventListener("focusout", function() {
-    localStorage.setItem("profesor", nombreProfe.value);
-    })
-dniProfe.addEventListener("focusout", function() {
-localStorage.setItem("documentoProfe", dniProfe.value);
-    })
-cursoProfe.addEventListener("focusout", function() {
-    localStorage.setItem("cursoProfe", cursoProfe.value);
-    })
-
-
-nombreProfe.value = localStorage.getItem("profesor");
-if(nombreProfe.value = localStorage.getItem("profesor")){
-    const profe = document.getElementById("profe");
-    profe.innerHTML = "Hola  " + nombreProfe.value; 
+let nombreProfe = document.getElementById("nombreProfe");
+console.log(nombreProfe);
+let dniProfe = document.getElementById("dniProfe");    
+let cursoProfe = document.getElementById("cursoProfe");
+if(nombreProfe){
+    mostrarPresentacion(yo); 
+}
+if(nombreProfe){
+    guardarInfoProfe();
 }
 
-/* nom = localStorage.setItem('profesor', nombreProfe.value);
-documento = localStorage.setItem('dniProfesor', dniProfe.value); */
-/* let teacher = localStorage.getItem("profesor");
-let dniTeacher = localStorage.getItem("dniProfesor");
-
-const profe = document.getElementById("profe");
-profe.innerHTML = "Hola " + teacher; */
+let nombreAlumno = document.getElementById("nombreAlumno");
+let dniAlumno = document.getElementById("dniAlumno");    
 
 
-
-
-/* const profe = prompt('Ingrese su nombre profe');
-const dniProf = Number(prompt('Ingrese su documento por favor'));
-const grado = prompt('Ingrese el curso al que quiere promediar');
-const profesor = new persona(profe, dniProf, grado); */
-
-
-
-/* alert('Bienvenido ' + profesor.name + ", que tenga un buen dia promediando a " + profesor.grade); */
-
+if(nombreAlumno){
+    nombreProfe = localStorage.getItem("profesor");
+    cursoProfe = localStorage.getItem("cursoProfe")
+    const profe = document.getElementById("profe");
+    profe.innerHTML = `Hola ${nombreProfe} que tenga un buen día promediando a ${cursoProfe} 😁`;
+}
 
 /* do {
     const alum = prompt('Ingrese el nombre del alumno');
