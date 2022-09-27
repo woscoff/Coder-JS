@@ -36,8 +36,25 @@ const boton = document.getElementById("boton");
     }
 )
 
-localStorage.setItem("profesor", nombreProfe.value);
-localStorage.setItem("dniProfesor", dniProfe.value);
+nombreProfe.addEventListener("focusout", function() {
+    localStorage.setItem("profesor", nombreProfe.value);
+    })
+dniProfe.addEventListener("focusout", function() {
+localStorage.setItem("documentoProfe", dniProfe.value);
+    })
+cursoProfe.addEventListener("focusout", function() {
+    localStorage.setItem("cursoProfe", cursoProfe.value);
+    })
+
+
+nombreProfe.value = localStorage.getItem("profesor");
+if(nombreProfe.value = localStorage.getItem("profesor")){
+    const profe = document.getElementById("profe");
+    profe.innerHTML = "Hola  " + nombreProfe.value; 
+}
+
+/* nom = localStorage.setItem('profesor', nombreProfe.value);
+documento = localStorage.setItem('dniProfesor', dniProfe.value); */
 /* let teacher = localStorage.getItem("profesor");
 let dniTeacher = localStorage.getItem("dniProfesor");
 
