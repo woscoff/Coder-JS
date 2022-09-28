@@ -33,6 +33,15 @@ function guardarInfoProfe(){
         })
 }
 
+function guardarInfoAlumno(){
+    nombreAlumno.addEventListener("focusout", function() {
+        localStorage.setItem("alumno", nombreAlumno.value);
+        })
+    dniAlumno.addEventListener("focusout", function() {
+    localStorage.setItem("documentoAlumno", dniAlumno.value);
+        })
+}
+
 const yo = ["Santiago Woscoff", 18];
 
 function mostrarPresentacion(yo){
@@ -42,7 +51,6 @@ function mostrarPresentacion(yo){
 
 
 let nombreProfe = document.getElementById("nombreProfe");
-console.log(nombreProfe);
 let dniProfe = document.getElementById("dniProfe");    
 let cursoProfe = document.getElementById("cursoProfe");
 if(nombreProfe){
@@ -61,6 +69,10 @@ if(nombreAlumno){
     cursoProfe = localStorage.getItem("cursoProfe")
     const profe = document.getElementById("profe");
     profe.innerHTML = `Hola ${nombreProfe} que tenga un buen día promediando a ${cursoProfe} 😁`;
+}
+
+if(nombreAlumno){
+    guardarInfoAlumno();
 }
 
 /* do {
