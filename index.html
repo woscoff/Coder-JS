@@ -19,9 +19,14 @@
         <label for="formGroupExampleInput2" class="form-label">Ingrese su documento por favor</label>
         <input type="text" class="form-control" id="dniProfe" placeholder="DNI">
       </div>
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Ingrese el curso al que quiere promediar</label>
         <input type="text" class="form-control" id="cursoProfe" placeholder="Curso">
+        <p id="inputError"></p>
+      </div> -->
+      <div>
+        <label for="number">¿Qué curso te gustaría promediar?</label>
+        <input type="number" id="cursoProfe" name="amount" value="1" min="1" max="6">
       </div>
     <a href="profeIngresa.html"><input class="btn btn-primary" type="button" id="boton" value="Enviar"></a>
 

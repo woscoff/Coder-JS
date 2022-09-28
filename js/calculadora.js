@@ -17,8 +17,34 @@ function persona(name, dni, grade){
     this.grade = grade;
 }
 
+const cursos = [
+    {
+        curso: 1, 
+        alumnos: '22 alumnos' 
+    },
+    {
+        curso: 2, 
+        alumnos: '26 alumnos'
+    },
+    {
+        curso: 3, 
+        alumnos: '30 alumnos'
+    },
+    {
+        curso: 4, 
+        alumnos: '27 alumnos'
+    },
+    {
+        curso: 5, 
+        alumnos: '34 alumnos'
+    },
+    {
+        curso: 6, 
+        alumnos: '32 alumnos'
+    },
+];
 
-
+const enJSON = JSON.stringify(cursos);
 
 
 function guardarInfoProfe(){
@@ -32,6 +58,7 @@ function guardarInfoProfe(){
         localStorage.setItem("cursoProfe", cursoProfe.value);
         })
 }
+
 
 function guardarInfoAlumno(){
     nombreAlumno.addEventListener("focusout", function() {
@@ -56,24 +83,56 @@ let cursoProfe = document.getElementById("cursoProfe");
 if(nombreProfe){
     mostrarPresentacion(yo); 
 }
+
+
 if(nombreProfe){
     guardarInfoProfe();
-}
+} 
+
 
 let nombreAlumno = document.getElementById("nombreAlumno");
 let dniAlumno = document.getElementById("dniAlumno");    
 
+let botonCursos = document.getElementById("botonCursos");
 
 if(nombreAlumno){
     nombreProfe = localStorage.getItem("profesor");
     cursoProfe = localStorage.getItem("cursoProfe")
     const profe = document.getElementById("profe");
-    profe.innerHTML = `Hola ${nombreProfe} que tenga un buen día promediando a ${cursoProfe} 😁`;
+    profe.innerHTML = `Hola ${nombreProfe} que tenga un buen día promediando al curso N° ${cursoProfe} 😁`;
+    guardarInfoAlumno();
+
+    botonCursos.addEventListener("click", () => {
+        const infoCurso = document.getElementById("infoCurso");
+        if(cursoProfe == 1){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos;
+        }
+        if(cursoProfe == 2){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[1].curso + " y tiene " + cursos[1].alumnos;
+        }
+        if(cursoProfe == 3){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[2].curso + " y tiene " + cursos[2].alumnos;
+        }
+        if(cursoProfe == 4){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[3].curso + " y tiene " + cursos[3].alumnos;
+        }
+        if(cursoProfe == 5){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[4].curso + " y tiene " + cursos[4].alumnos;
+        }
+        if(cursoProfe == 6){
+            infoCurso.innerHTML = "Su curso es el N°" + cursos[5].curso + " y tiene " + cursos[5].alumnos;
+        }
+    }
+) 
+
 }
 
-if(nombreAlumno){
-    guardarInfoAlumno();
-}
+
+    
+
+
+    
+
 
 /* do {
     const alum = prompt('Ingrese el nombre del alumno');
