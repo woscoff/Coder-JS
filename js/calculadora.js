@@ -48,10 +48,11 @@ const instituto = document.getElementById("instituto");
 const localidad = document.getElementById("localidad");
 const colegio = [];
 
+
+
 function infoColegio(){
     instituto.addEventListener("focusout", function() {
         colegio.push(instituto.value);
-        console.log(instituto.value);
         localStorage.setItem("colegio", JSON.stringify(colegio));
         })
     localidad.addEventListener("focusout", function() {
@@ -92,6 +93,7 @@ function mostrarPresentacion(yo){
 }
 
 
+
 let nombreProfe = document.getElementById("nombreProfe");
 let dniProfe = document.getElementById("dniProfe");    
 let cursoProfe = document.getElementById("cursoProfe");
@@ -99,6 +101,20 @@ if(nombreProfe){
     mostrarPresentacion(yo);
     guardarInfoProfe();
     infoColegio();
+    Toastify({
+        text: "Sonria! Hay muchos alumnos que esperan poder aprobar la materia 📖✏",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: false,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} 
+      }).showToast();
 }
 
 
@@ -119,39 +135,123 @@ if(nombreAlumno){
     botonCursos.addEventListener("click", () => {
         const infoCurso = document.getElementById("infoCurso");
         if(cursoProfe == 1){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
         if(cursoProfe == 2){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[1].curso + " y tiene " + cursos[1].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[1].curso + " y tiene " + cursos[1].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
         if(cursoProfe == 3){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[2].curso + " y tiene " + cursos[2].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[2].curso + " y tiene " + cursos[2].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
         if(cursoProfe == 4){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[3].curso + " y tiene " + cursos[3].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[3].curso + " y tiene " + cursos[3].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
         if(cursoProfe == 5){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[4].curso + " y tiene " + cursos[4].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[4].curso + " y tiene " + cursos[4].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
         if(cursoProfe == 6){
-            infoCurso.innerHTML = "Su curso es el N°" + cursos[5].curso + " y tiene " + cursos[5].alumnos;
+            Toastify({
+                text: "Su curso es el N°" + cursos[5].curso + " y tiene " + cursos[5].alumnos,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
     }
 ) 
 
     botonInstituto.addEventListener("click", () => {
-        const infoInstituto = document.getElementById("infoInstituto");
-            infoInstituto.innerHTML = "Datos del Instituto: " + colegioLS;
+            Toastify({
+                text: "Datos del instituto: " + colegioLS,
+                duration: 3000,
+                destination: "",
+                newWindow: true,
+                close: false,
+                gravity: "top", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} 
+              }).showToast();
     }
 )
 
 }
-
-
-    
-
-
-    
 
 
 /* do {
