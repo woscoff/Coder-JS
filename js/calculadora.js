@@ -44,8 +44,23 @@ const cursos = [
     },
 ];
 
-const enJSON = JSON.stringify(cursos);
+const instituto = document.getElementById("instituto");
+const localidad = document.getElementById("localidad");
+const colegio = [];
 
+function infoColegio(){
+    instituto.addEventListener("focusout", function() {
+        colegio.push(instituto.value);
+        console.log(instituto.value);
+        localStorage.setItem("colegio", JSON.stringify(colegio));
+        })
+    localidad.addEventListener("focusout", function() {
+        colegio.push(localidad.value);
+        console.log(colegio);
+        console.log(JSON.stringify(colegio));
+        localStorage.setItem("colegio", JSON.stringify(colegio));
+        })
+}
 
 function guardarInfoProfe(){
     nombreProfe.addEventListener("focusout", function() {
@@ -81,21 +96,20 @@ let nombreProfe = document.getElementById("nombreProfe");
 let dniProfe = document.getElementById("dniProfe");    
 let cursoProfe = document.getElementById("cursoProfe");
 if(nombreProfe){
-    mostrarPresentacion(yo); 
-}
-
-
-if(nombreProfe){
+    mostrarPresentacion(yo);
     guardarInfoProfe();
-} 
+    infoColegio();
+}
 
 
 let nombreAlumno = document.getElementById("nombreAlumno");
 let dniAlumno = document.getElementById("dniAlumno");    
 
 let botonCursos = document.getElementById("botonCursos");
+const botonInstituto = document.getElementById("botonInstituto");
 
 if(nombreAlumno){
+    colegioLS = localStorage.getItem("colegio");
     nombreProfe = localStorage.getItem("profesor");
     cursoProfe = localStorage.getItem("cursoProfe")
     const profe = document.getElementById("profe");
@@ -124,6 +138,12 @@ if(nombreAlumno){
         }
     }
 ) 
+
+    botonInstituto.addEventListener("click", () => {
+        const infoInstituto = document.getElementById("infoInstituto");
+            infoInstituto.innerHTML = "Datos del Instituto: " + colegioLS;
+    }
+)
 
 }
 
