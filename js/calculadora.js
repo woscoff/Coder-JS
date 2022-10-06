@@ -17,7 +17,7 @@ function persona(name, dni, grade){
     this.grade = grade;
 }
 
-const cursos = [
+/* const cursos = [
     {
         curso: 1, 
         alumnos: '22 alumnos' 
@@ -42,7 +42,7 @@ const cursos = [
         curso: 6, 
         alumnos: '32 alumnos'
     },
-];
+]; */
 
 const instituto = document.getElementById("instituto");
 const localidad = document.getElementById("localidad");
@@ -133,8 +133,31 @@ if(nombreAlumno){
     guardarInfoAlumno();
 
     botonCursos.addEventListener("click", () => {
-        const infoCurso = document.getElementById("infoCurso");
-        if(cursoProfe == 1){
+
+
+    fetch('cursos.json')
+        .then( (res) => res.json())
+        .then( (data) => {
+    
+            data.forEach((cursos) => {
+                const li = document.createElement('li')
+                li.innerHTML = `
+                    <h4>${cursos.curso}</h4>
+                    <p>${cursos.alumnos}</p>
+                    <hr/>
+                `
+                botonCursos.append(li)
+            })
+        })
+    
+
+
+
+
+
+
+
+/*         if(cursoProfe == 1){
             Toastify({
                 text: "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos,
                 duration: 3000,
@@ -229,7 +252,7 @@ if(nombreAlumno){
                 },
                 onClick: function(){} 
               }).showToast();
-        }
+        } */
     }
 ) 
 
