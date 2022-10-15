@@ -1,5 +1,10 @@
-let resultado = 0;
+
 let pregunta;
+
+function notaFinal(n1, n2){
+    let suma = n1.value + n2.value;
+    resultado = suma / 2;
+}
 
 function notaFinal3(nota1, nota2, nota3){
     let suma = nota1 + nota2 + nota3;
@@ -17,7 +22,7 @@ function persona(name, dni, grade){
     this.grade = grade;
 }
 
-/* const cursos = [
+const cursos = [
     {
         curso: 1, 
         alumnos: '22 alumnos' 
@@ -42,7 +47,7 @@ function persona(name, dni, grade){
         curso: 6, 
         alumnos: '32 alumnos'
     },
-]; */
+];
 
 const instituto = document.getElementById("instituto");
 const localidad = document.getElementById("localidad");
@@ -103,7 +108,7 @@ if(nombreProfe){
     infoColegio();
     Toastify({
         text: "Sonria! Hay muchos alumnos que esperan poder aprobar la materia 📖✏",
-        duration: 3000,
+        duration: 5000,
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: false,
@@ -133,31 +138,7 @@ if(nombreAlumno){
     guardarInfoAlumno();
 
     botonCursos.addEventListener("click", () => {
-
-
-    fetch('cursos.json')
-        .then( (res) => res.json())
-        .then( (data) => {
-    
-            data.forEach((cursos) => {
-                const li = document.createElement('li')
-                li.innerHTML = `
-                    <h4>${cursos.curso}</h4>
-                    <p>${cursos.alumnos}</p>
-                    <hr/>
-                `
-                botonCursos.append(li)
-            })
-        })
-    
-
-
-
-
-
-
-
-/*         if(cursoProfe == 1){
+        if(cursoProfe == 1){
             Toastify({
                 text: "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos,
                 duration: 3000,
@@ -252,7 +233,21 @@ if(nombreAlumno){
                 },
                 onClick: function(){} 
               }).showToast();
-        } */
+        }
+        /* fetch('cursos.json')
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((cursos) => {
+            const li = document.createElement('li')
+            li.innerHTML = `
+                <h4>${cursos.curso}</h4>
+                <p>${cursos.alumnos}</p>
+                <hr/>
+            `
+            botonCursos.append(li)
+        })
+    }) */
     }
 ) 
 
@@ -276,12 +271,32 @@ if(nombreAlumno){
 
 }
 
+if (n1) {
+    function calcular(){
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let resultado = (parseFloat(n1)+parseFloat(n2))/2;
+        console.log(n1);
+        console.log(n2);
+        console.log(resultado);
+        alumno = localStorage.getItem("alumno");
+        caluculo = document.getElementById("calculo");
+        if (resultado >= 6.5) {
+            caluculo.innerHTML = `Wow!  ${alumno}  aprobó con un promedio de ${resultado} porque redondeamos la nota!`;
+        }
+        if (resultado >= 7) {
+            caluculo.innerHTML = `Felicidades!  ${alumno}  aprobó con un promedio de ${resultado}!!!`;
+        } 
+        if(resultado < 6.5){
+            caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
+        }
+    }
+
+}
+
+
 
 /* do {
-    const alum = prompt('Ingrese el nombre del alumno');
-    const dniAlum = Number(prompt('Ingrese el documento del alumno'));
-    const curso = prompt('Ingrese el curso del alumno');
-    const alumno = new persona(alum, dniAlum, curso);
 
     let menu = Number(prompt('1.Promediar tres notas / 2.Promediar cuatro notas'));
 switch (menu) {
