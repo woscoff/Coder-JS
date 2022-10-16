@@ -291,7 +291,6 @@ if (n1) {
             caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
         }
     }
-
 }
 
 
