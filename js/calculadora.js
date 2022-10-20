@@ -1,59 +1,6 @@
-
-let pregunta;
-
-function notaFinal(n1, n2){
-    let suma = n1.value + n2.value;
-    resultado = suma / 2;
-}
-
-function notaFinal3(nota1, nota2, nota3){
-    let suma = nota1 + nota2 + nota3;
-    resultado = suma / 3;
-}
-
-function notaFinal4(nota1, nota2, nota3, nota4){
-    let suma = nota1 + nota2 + nota3 + nota4;
-    resultado = suma / 4;
-}
-
-function persona(name, dni, grade){
-    this.name = name;
-    this.dni = dni;
-    this.grade = grade;
-}
-
-const cursos = [
-    {
-        curso: 1, 
-        alumnos: '22 alumnos' 
-    },
-    {
-        curso: 2, 
-        alumnos: '26 alumnos'
-    },
-    {
-        curso: 3, 
-        alumnos: '30 alumnos'
-    },
-    {
-        curso: 4, 
-        alumnos: '27 alumnos'
-    },
-    {
-        curso: 5, 
-        alumnos: '34 alumnos'
-    },
-    {
-        curso: 6, 
-        alumnos: '32 alumnos'
-    },
-];
-
 const instituto = document.getElementById("instituto");
 const localidad = document.getElementById("localidad");
 const colegio = [];
-
-
 
 function infoColegio(){
     instituto.addEventListener("focusout", function() {
@@ -89,6 +36,73 @@ function guardarInfoAlumno(){
     localStorage.setItem("documentoAlumno", dniAlumno.value);
         })
 }
+
+
+function calcular2(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let resultado = (parseFloat(n1)+parseFloat(n2))/2;
+    console.log(n1);
+    console.log(n2);
+    console.log(resultado);
+    alumno = localStorage.getItem("alumno");
+    caluculo = document.getElementById("calculo");
+    if (resultado >= 6.5) {
+        caluculo.innerHTML = `Wow!  ${alumno}  aprobó con un promedio de ${resultado} porque redondeamos la nota!`;
+    }
+    if (resultado >= 7) {
+        caluculo.innerHTML = `Felicidades!  ${alumno}  aprobó con un promedio de ${resultado}!!!`;
+    } 
+    if(resultado < 6.5){
+        caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
+    }
+}
+
+function calcular3(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let resultado = (parseFloat(n1)+parseFloat(n2)+parseFloat(n3))/3;
+    console.log(n1);
+    console.log(n2);
+    console.log(resultado);
+    alumno = localStorage.getItem("alumno");
+    caluculo = document.getElementById("calculo");
+    if (resultado >= 6.5) {
+        caluculo.innerHTML = `Wow!  ${alumno}  aprobó con un promedio de ${resultado} porque redondeamos la nota!`;
+    }
+    if (resultado >= 7) {
+        caluculo.innerHTML = `Felicidades!  ${alumno}  aprobó con un promedio de ${resultado}!!!`;
+    } 
+    if(resultado < 6.5){
+        caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
+    }
+}
+
+function calcular4(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let n4 = document.getElementById("n4").value;
+    let resultado = (parseFloat(n1)+parseFloat(n2)+parseFloat(n3)+parseFloat(n4))/4;
+    console.log(n1);
+    console.log(n2);
+    console.log(resultado);
+    alumno = localStorage.getItem("alumno");
+    caluculo = document.getElementById("calculo");
+    if (resultado >= 6.5) {
+        caluculo.innerHTML = `Wow!  ${alumno}  aprobó con un promedio de ${resultado} porque redondeamos la nota!`;
+    }
+    if (resultado >= 7) {
+        caluculo.innerHTML = `Felicidades!  ${alumno}  aprobó con un promedio de ${resultado}!!!`;
+    } 
+    if(resultado < 6.5){
+        caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
+    }
+}
+
+
+
 
 const yo = ["Santiago Woscoff", 18];
 
@@ -129,8 +143,13 @@ let dniAlumno = document.getElementById("dniAlumno");
 let botonCursos = document.getElementById("botonCursos");
 const botonInstituto = document.getElementById("botonInstituto");
 
+
+
 if(nombreAlumno){
     colegioLS = localStorage.getItem("colegio");
+    console.log(colegioLS);
+    school = JSON.parse(colegioLS);
+    console.log(school); 
     nombreProfe = localStorage.getItem("profesor");
     cursoProfe = localStorage.getItem("cursoProfe")
     const profe = document.getElementById("profe");
@@ -138,122 +157,25 @@ if(nombreAlumno){
     guardarInfoAlumno();
 
     botonCursos.addEventListener("click", () => {
-        if(cursoProfe == 1){
-            Toastify({
-                text: "Su curso es el N°" + cursos[0].curso + " y tiene " + cursos[0].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        if(cursoProfe == 2){
-            Toastify({
-                text: "Su curso es el N°" + cursos[1].curso + " y tiene " + cursos[1].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        if(cursoProfe == 3){
-            Toastify({
-                text: "Su curso es el N°" + cursos[2].curso + " y tiene " + cursos[2].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        if(cursoProfe == 4){
-            Toastify({
-                text: "Su curso es el N°" + cursos[3].curso + " y tiene " + cursos[3].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        if(cursoProfe == 5){
-            Toastify({
-                text: "Su curso es el N°" + cursos[4].curso + " y tiene " + cursos[4].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        if(cursoProfe == 6){
-            Toastify({
-                text: "Su curso es el N°" + cursos[5].curso + " y tiene " + cursos[5].alumnos,
-                duration: 3000,
-                destination: "",
-                newWindow: true,
-                close: false,
-                gravity: "top", 
-                position: "right", 
-                stopOnFocus: true, 
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function(){} 
-              }).showToast();
-        }
-        /* fetch('cursos.json')
-    .then( (res) => res.json())
-    .then( (data) => {
+        const info = document.getElementById('info');
+        fetch('/cursos.json')
+        .then(respuesta => respuesta.json())
+        .then(respuesta => {
+            respuesta.forEach(respuesta => {
+                const texto = document.createElement('p');
+                texto.innerHTML = `El curso N° ${respuesta.curso} tiene ${respuesta.alumnos} alumnos`;
+                info.appendChild(texto);
 
-        data.forEach((cursos) => {
-            const li = document.createElement('li')
-            li.innerHTML = `
-                <h4>${cursos.curso}</h4>
-                <p>${cursos.alumnos}</p>
-                <hr/>
-            `
-            botonCursos.append(li)
-        })
-    }) */
+                console.log(respuesta);
+            });
+        }
+    )
     }
 ) 
 
     botonInstituto.addEventListener("click", () => {
             Toastify({
-                text: "Datos del instituto: " + colegioLS,
+                text: "Colegio: " + school[0] + " // Localidad: " + school[1],
                 duration: 3000,
                 destination: "",
                 newWindow: true,
@@ -271,27 +193,11 @@ if(nombreAlumno){
 
 }
 
-if (n1) {
-    function calcular(){
-        let n1 = document.getElementById("n1").value;
-        let n2 = document.getElementById("n2").value;
-        let resultado = (parseFloat(n1)+parseFloat(n2))/2;
-        console.log(n1);
-        console.log(n2);
-        console.log(resultado);
-        alumno = localStorage.getItem("alumno");
-        caluculo = document.getElementById("calculo");
-        if (resultado >= 6.5) {
-            caluculo.innerHTML = `Wow!  ${alumno}  aprobó con un promedio de ${resultado} porque redondeamos la nota!`;
-        }
-        if (resultado >= 7) {
-            caluculo.innerHTML = `Felicidades!  ${alumno}  aprobó con un promedio de ${resultado}!!!`;
-        } 
-        if(resultado < 6.5){
-            caluculo.innerHTML = `Ups! Parece que ${alumno}  desaprobó con un promedio de ${resultado}.`;
-        }
+const tituloCalculadora = document.getElementById("tituloCalculadora");
+    if (tituloCalculadora) {
+        nomAlumno = localStorage.getItem("alumno");
+        tituloCalculadora.innerHTML = `Calcule las notas necesarias para ${nomAlumno}`
     }
-}
 
 
 

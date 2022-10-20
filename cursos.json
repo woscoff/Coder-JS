@@ -1,0 +1,26 @@
+[
+    {
+        "curso": 1, 
+        "alumnos": 22
+    },
+    {
+        "curso": 2, 
+        "alumnos": 26
+    },
+    {
+        "curso": 3, 
+        "alumnos": 30
+    },
+    {
+        "curso": 4, 
+        "alumnos": 27
+    },
+    {
+        "curso": 5, 
+        "alumnos": 34
+    },
+    {
+        "curso": 6, 
+        "alumnos": 32
+    }
+]
