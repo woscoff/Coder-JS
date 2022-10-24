@@ -1,0 +1,81 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p{
+    color: #6f1d1b;
+    font-size: 1.4em;
+    line-height: 2em;
+    font-weight: 400;
+}
+
+body {
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    color: #6f1d1b;
+    font-family: 'Quintessential', cursive; }
+
+label{
+    color: #6f1d1b;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+#boton{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+}
+
+#promedio2{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+#promedio3{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+#promedio4{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+#botonInstituto{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+#botonCursos{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+#volver{
+    background-color: #6f1d1b;
+    color: #ffe6a7;
+    border-color: #6f1d1b;
+}
+
+.cuerpo{
+    margin: auto;
+    overflow-x: hidden; 
+    text-align: center;
+}
